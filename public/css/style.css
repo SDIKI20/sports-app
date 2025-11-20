@@ -1,0 +1,32 @@
+/* Basic layout styles to mimic the provided dashboard design */
+:root{
+    --sidebar-width:240px;
+    --sidebar-collapsed-width:70px;
+    --brand-color:#6f42c1;
+}
+body{background:#f6f4f8;font-family:Segoe UI, Roboto, Helvetica, Arial, sans-serif;color:#333}
+.app-wrapper{min-height:100vh;display:flex}
+.app-sidebar{width:var(--sidebar-width);transition:width .25s ease;background:#ffffff}
+.app-sidebar.collapsed{width:var(--sidebar-collapsed-width)}
+.app-sidebar .brand{font-weight:700;color:var(--brand-color);font-size:1.05rem;text-decoration:none}
+.app-sidebar .nav-link{color:#6b6b6b;padding:12px 18px}
+.app-sidebar .nav-link:hover{background:#f1f1fb;color:#000}
+.app-topbar{position:sticky;top:0;z-index:50}
+.app-main{flex:1}
+.app-content{padding-top:20px}
+/* Dashboard stats cards styled like colorful panels */
+.card.stat-card{border:0;border-radius:6px;color:#fff;padding:18px}
+.card.stat-card .card-header{background:transparent;font-weight:600}
+.bg-primary{background:linear-gradient(135deg,#1e88e5,#1976d2)!important}
+.bg-success{background:linear-gradient(135deg,#2ecc71,#27ae60)!important}
+.bg-warning{background:linear-gradient(135deg,#f1c40f,#f39c12)!important}
+.bg-info{background:linear-gradient(135deg,#00c0ef,#17a2b8)!important}
+.card .card-title{font-size:28px;font-weight:700}
+.card .card-text{opacity:.9}
+/* Quick actions box */
+.card .btn{border-radius:6px}
+/* Responsive */
+@media (max-width:768px){
+    .app-sidebar{position:fixed;left:-100%;top:0;height:100vh}
+    .app-sidebar.collapsed{left:0}
+}

@@ -1,8 +1,15 @@
 <?php require APPROOT . '/views/layouts/header.php'; ?>
-<div class="row mb-4">
-    <div class="col-md-12">
-        <h1>Dashboard</h1>
-        <p class="lead">Welcome back, <?php echo $_SESSION['user_username']; ?></p>
+
+<div class="row mb-4 align-items-center">
+    <div class="col-md-8">
+        <h1 class="mb-0">Dashboard</h1>
+        <p class="text-muted">Welcome back, <?php echo $_SESSION['user_username']; ?></p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <div class="btn-group">
+            <a href="<?php echo URLROOT; ?>/member/add" class="btn btn-primary">Add New Member</a>
+            <a href="<?php echo URLROOT; ?>/event/add" class="btn btn-outline-secondary">Create Event</a>
+        </div>
     </div>
 </div>
 

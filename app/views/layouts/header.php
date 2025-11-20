@@ -10,44 +10,43 @@
 </head>
 <body>
     <?php if(isset($_SESSION['user_id'])): ?>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-        <div class="container">
-            <a class="navbar-brand" href="<?php echo URLROOT; ?>"><?php echo SITENAME; ?></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/member">Members</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/team">Teams</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/event">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/subscription">Finance</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/report">Reports</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Welcome, <?php echo $_SESSION['user_username']; ?></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/auth/logout">Logout</a>
-                    </li>
-                </ul>
+    <div class="app-wrapper d-flex">
+        <aside class="app-sidebar bg-white shadow-sm">
+            <div class="sidebar-header p-3 text-center">
+                <a class="brand" href="<?php echo URLROOT; ?>"><?php echo SITENAME; ?></a>
             </div>
-        </div>
-    </nav>
-    <?php endif; ?>
+            <nav class="nav flex-column p-2">
+                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard"><i class="fa fa-home me-2"></i> Dashboard</a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/member"><i class="fa fa-users me-2"></i> Members</a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/team"><i class="fa fa-flag me-2"></i> Teams</a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/event"><i class="fa fa-calendar me-2"></i> Events</a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/subscription"><i class="fa fa-dollar-sign me-2"></i> Finance</a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/report"><i class="fa fa-file-alt me-2"></i> Reports</a>
+            </nav>
+            <div class="sidebar-footer p-3 text-center">
+                <a class="btn btn-sm btn-outline-secondary" href="<?php echo URLROOT; ?>/auth/logout">Logout</a>
+            </div>
+        </aside>
+        <div class="app-main flex-fill">
+            <header class="app-topbar bg-white border-bottom">
+                <div class="container-fluid d-flex align-items-center justify-content-between py-2">
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-light btn-sm me-2" id="sidebarToggle"><i class="fa fa-bars"></i></button>
+                        <form class="d-none d-md-inline-block me-3">
+                            <div class="input-group">
+                                <input class="form-control form-control-sm" type="search" placeholder="Search projects">
+                                <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="me-3">Welcome, <?php echo $_SESSION['user_username']; ?></span>
+                        <img src="https://i.pravatar.cc/40" class="rounded-circle" alt="avatar">
+                    </div>
+                </div>
+            </header>
+            <main class="app-content p-4 container-fluid">
+            <!-- Page content starts -->
+    <?php else: ?>
     <div class="container">
+    <?php endif; ?>
