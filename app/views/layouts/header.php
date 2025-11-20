@@ -16,15 +16,19 @@
                 <a class="brand" href="<?php echo URLROOT; ?>"><?php echo SITENAME; ?></a>
             </div>
             <nav class="nav flex-column p-2">
-                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard"><i class="fa fa-home me-2"></i> Dashboard</a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/member"><i class="fa fa-users me-2"></i> Members</a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/team"><i class="fa fa-flag me-2"></i> Teams</a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/event"><i class="fa fa-calendar me-2"></i> Events</a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/subscription"><i class="fa fa-dollar-sign me-2"></i> Finance</a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/report"><i class="fa fa-file-alt me-2"></i> Reports</a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard"><i class="fa fa-home me-2"></i><span class="nav-text">Dashboard</span></a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/member"><i class="fa fa-users me-2"></i><span class="nav-text">Members</span></a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/team"><i class="fa fa-flag me-2"></i><span class="nav-text">Teams</span></a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/event"><i class="fa fa-calendar me-2"></i><span class="nav-text">Events</span></a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/subscription"><i class="fa fa-dollar-sign me-2"></i><span class="nav-text">Finance</span></a>
+                <a class="nav-link" href="<?php echo URLROOT; ?>/report"><i class="fa fa-file-alt me-2"></i><span class="nav-text">Reports</span></a>
             </nav>
             <div class="sidebar-footer p-3 text-center">
-                <a class="btn btn-sm btn-outline-secondary" href="<?php echo URLROOT; ?>/auth/logout">Logout</a>
+                <a class="btn btn-sm btn-outline-secondary logout-btn" href="<?php echo URLROOT; ?>/auth/logout">Logout</a>
+                <!-- Icon-only logout shown when sidebar is collapsed -->
+                <a class="logout-icon" href="<?php echo URLROOT; ?>/auth/logout" title="Logout">
+                    <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                </a>
             </div>
         </aside>
         <div class="app-main flex-fill">
