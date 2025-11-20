@@ -1,0 +1,32 @@
+<?php
+class User extends Model {
+    // Login User
+    public function login($username, $password){
+        $this->db->query('SELECT * FROM users WHERE username = :username');
+        $this->db->bind(':username', $username);
+
+        $row = $this->db->single();
+
+        $hashed_password = $row->password_hash;
+        if(password_verify($password, $hashed_password)){
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
+    // Find user by username
+    public function findUserByUsername($username){
+        $this->db->query('SELECT * FROM users WHERE username = :username');
+        $this->db->bind(':username', $username);
+
+        $row = $this->db->single();
+
+        // Check row
+        if($this->db->rowCount() > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
