@@ -6,10 +6,8 @@
 }
 body{background:#f6f4f8;font-family:Segoe UI, Roboto, Helvetica, Arial, sans-serif;color:#333}
 .app-wrapper{min-height:100vh;display:flex}
-.app-sidebar{width:var(--sidebar-width);transition:width .25s ease;background:#ffffff}
+.app-sidebar{width:var(--sidebar-width);transition:width .25s ease;background:#ffffff;display:flex;flex-direction:column;min-height:100vh}
 .app-sidebar.collapsed{width:var(--sidebar-collapsed-width);overflow:hidden}
-/* ensure footer positioned at bottom */
-.app-sidebar{position:relative}
 .app-sidebar .brand{font-weight:700;color:var(--brand-color);font-size:1.05rem;text-decoration:none}
 .app-sidebar .nav-link{color:#6b6b6b;padding:12px 18px}
 .app-sidebar .nav-link:hover{background:#f1f1fb;color:#000}
@@ -40,14 +38,19 @@ body{background:#f6f4f8;font-family:Segoe UI, Roboto, Helvetica, Arial, sans-ser
 }
 
 /* Sidebar footer logout icon styles */
-.sidebar-footer{position:relative}
-.sidebar-footer .logout-icon{display:none;position:absolute;left:50%;transform:translateX(-50%);bottom:12px;text-decoration:none}
+
+/* Place footer fixed at the bottom of the sidebar and keep it separated from nav links */
+.sidebar-footer{position:absolute;left:0;right:0;bottom:12px;width:100%;display:flex;justify-content:center;padding:0 12px}
+.app-sidebar .nav{flex:1;overflow:auto;padding-bottom:18px} /* reserve space for footer via flex layout */
+.sidebar-footer{position:static;margin-top:auto;display:flex;justify-content:center;padding:12px}
+.sidebar-footer .logout-icon{display:none;text-decoration:none}
 .sidebar-footer .logout-icon i{display:inline-block;width:44px;height:44px;line-height:44px;border-radius:50%;background:#e74c3c;color:#fff;text-align:center;font-size:18px}
 .sidebar-footer .logout-btn{display:inline-block}
 
-/* When sidebar is collapsed: hide the text button and show the red icon at bottom */
+/* When sidebar is collapsed: hide the text button and show the red icon at bottom, separated from other icons */
 .app-sidebar.collapsed .sidebar-footer .logout-btn{display:none}
-.app-sidebar.collapsed .sidebar-footer .logout-icon{display:inline-block}
+.app-sidebar.collapsed .sidebar-footer .logout-icon{display:inline-flex;align-items:center;justify-content:center}
+.app-sidebar.collapsed .sidebar-footer{padding-bottom:12px}
 
 /* On mobile use open/hidden states: keep logout-btn visible in drawer, hide icon */
 @media (max-width:768px){
