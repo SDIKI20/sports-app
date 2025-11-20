@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS members (
     address TEXT,
     join_date DATE NOT NULL,
     team_id INT,
+    major VARCHAR(100),
     photo VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE SET NULL
@@ -49,12 +50,12 @@ CREATE TABLE IF NOT EXISTS events (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Event Participants Table
 CREATE TABLE IF NOT EXISTS event_participants (
     id INT AUTO_INCREMENT PRIMARY KEY,
     event_id INT NOT NULL,
     member_id INT NOT NULL,
     registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    attended TINYINT(1) DEFAULT 0,
     FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE,
     FOREIGN KEY (member_id) REFERENCES members(id) ON DELETE CASCADE,
     UNIQUE(event_id, member_id)

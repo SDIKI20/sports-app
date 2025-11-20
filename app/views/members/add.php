@@ -18,6 +18,14 @@
             <input type="text" name="phone" class="form-control" value="<?php echo $data['phone']; ?>">
         </div>
         <div class="form-group mb-3">
+            <label>Major:</label>
+            <input type="text" name="major" class="form-control" value="<?php echo isset($data['major']) ? $data['major'] : ''; ?>">
+        </div>
+        <div class="form-group mb-3">
+            <label>Skills (comma separated):</label>
+            <input type="text" name="skills" class="form-control" value="<?php echo isset($data['skills']) ? $data['skills'] : ''; ?>">
+        </div>
+        <div class="form-group mb-3">
             <label>Address:</label>
             <textarea name="address" class="form-control"><?php echo $data['address']; ?></textarea>
         </div>
