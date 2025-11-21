@@ -11,21 +11,35 @@
 <body>
     <?php if(isset($_SESSION['user_id'])): ?>
     <div class="app-wrapper d-flex">
-        <aside class="app-sidebar bg-white shadow-sm">
+        <aside class="app-sidebar">
             <div class="sidebar-header p-3 text-center">
-                <a class="brand" href="<?php echo URLROOT; ?>"><?php echo SITENAME; ?></a>
+                <a class="brand" href="<?php echo URLROOT; ?>">
+                    <span class="brand-text"><?php echo SITENAME; ?></span>
+                </a>
             </div>
             <nav class="nav flex-column p-2">
-                <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard"><i class="fa fa-home me-2"></i><span class="nav-text">Dashboard</span></a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/member"><i class="fa fa-users me-2"></i><span class="nav-text">Members</span></a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/team"><i class="fa fa-flag me-2"></i><span class="nav-text">Teams</span></a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/event"><i class="fa fa-calendar me-2"></i><span class="nav-text">Events</span></a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/subscription"><i class="fa fa-dollar-sign me-2"></i><span class="nav-text">Finance</span></a>
-                <a class="nav-link" href="<?php echo URLROOT; ?>/report"><i class="fa fa-file-alt me-2"></i><span class="nav-text">Reports</span></a>
+                <div class="sidebar-section">
+                    <div class="section-title">Management</div>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/dashboard"><i class="fa fa-home"></i><span class="nav-text">Dashboard</span></a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/member"><i class="fa fa-users"></i><span class="nav-text">Members</span></a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/team"><i class="fa fa-flag"></i><span class="nav-text">Teams</span></a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/event"><i class="fa fa-calendar"></i><span class="nav-text">Events</span></a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/subscription"><i class="fa fa-dollar-sign"></i><span class="nav-text">Finance</span></a>
+                    <!-- Vehicles and Coupons removed per request -->
+                </div>
+
+                <hr class="sidebar-sep"/>
+
+                <div class="sidebar-section">
+                    <div class="section-title">Report & Feedback</div>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/report"><i class="fa fa-flag"></i><span class="nav-text">Reports</span></a>
+                </div>
+
+                <!-- Database section removed -->
             </nav>
-            <div class="sidebar-footer p-3 text-center">
-                <a class="btn btn-sm btn-outline-secondary logout-btn" href="<?php echo URLROOT; ?>/auth/logout">Logout</a>
-                <!-- Icon-only logout shown when sidebar is collapsed -->
+
+            <div class="sidebar-footer p-3">
+                <a class="logout-btn nav-link text-start" href="<?php echo URLROOT; ?>/auth/logout"><i class="fa fa-sign-out-alt me-2"></i><span class="nav-text">Logout</span></a>
                 <a class="logout-icon" href="<?php echo URLROOT; ?>/auth/logout" title="Logout">
                     <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
                 </a>

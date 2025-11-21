@@ -9,7 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.innerWidth <= 768) {
             sidebar.classList.toggle('open');
         } else {
-            sidebar.classList.toggle('collapsed');
+            // Toggle collapsed state; also keep an 'expanded' helper for styling
+            var collapsed = sidebar.classList.toggle('collapsed');
+            if (collapsed) {
+                sidebar.classList.remove('expanded');
+            } else {
+                sidebar.classList.add('expanded');
+            }
         }
     });
 
