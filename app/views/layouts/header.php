@@ -59,7 +59,7 @@
                     </div>
                     <div class="d-flex align-items-center">
                         <span class="me-3">Welcome, <?php echo $_SESSION['user_username']; ?></span>
-                        <img src="https://i.pravatar.cc/40" class="rounded-circle" alt="avatar">
+                        <img src="<?php echo URLROOT; ?>/img/default-avatar.svg" class="rounded-circle avatar-sm" width="24" height="24" alt="default avatar">
                     </div>
                 </div>
             </header>

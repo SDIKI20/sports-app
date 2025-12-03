@@ -8,6 +8,7 @@
     --sidebar-item-bg-hover: rgba(255,122,24,0.06);
 }
 body{background:#f6f4f8;font-family:Segoe UI, Roboto, Helvetica, Arial, sans-serif;color:#333}
+.avatar-sm{width:24px;height:24px;object-fit:cover}
 .app-wrapper{min-height:100vh;display:flex}
 .app-sidebar{width:var(--sidebar-expanded-width);transition:width .20s ease,background .2s;background:var(--sidebar-bg);display:flex;flex-direction:column;min-height:100vh;color:#cfcfcf}
 .app-sidebar.collapsed{width:var(--sidebar-collapsed-width);overflow:hidden}

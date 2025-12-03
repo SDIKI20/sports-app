@@ -5,6 +5,8 @@
     </div>
     <div class="col-md-4 text-end">
         <a href="<?php echo URLROOT; ?>/report/searchBySkill" class="btn btn-outline-secondary">Search By Skill</a>
+        <a href="<?php echo URLROOT; ?>/report/exportCsv" class="btn btn-outline-primary ms-2">Export CSV</a>
+        <a href="<?php echo URLROOT; ?>/report/exportPdf" class="btn btn-primary ms-2">Export PDF</a>
     </div>
 </div>
 
