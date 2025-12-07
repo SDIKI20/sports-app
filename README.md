@@ -54,4 +54,4 @@ A pure PHP MVC application for managing sports associations, members, teams, eve
 
 ## Default Login
 - **Username:** admin
-- **Password:** password123
+- **Password:** password
